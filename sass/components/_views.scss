@@ -1,0 +1,215 @@
+//.view-members-view
+
+.views-view-grid{
+	width: 100%;
+	td{
+		vertical-align: top;
+		padding: 10px;
+	}
+}
+
+.html5-grid{
+	&.grid-2 {
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		@media #{$tablet-and-smaller}{
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+	}
+
+	&.grid-3 {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+		@media #{$tablet-and-smaller}{
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
+		@media #{$mobile}{
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+	}
+
+	&.grid-4 {
+		-webkit-column-count: 4;
+		-moz-column-count: 4;
+		column-count: 4;
+		@media #{$tablet-and-smaller}{
+			-webkit-column-count: 2;
+			-moz-column-count: 2;
+			column-count: 2;
+		}
+		@media #{$mobile}{
+			-webkit-column-count: 1;
+			-moz-column-count: 1;
+			column-count: 1;
+		}
+	}
+	& > ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li{
+			display: inline-block;
+			&.outline{ //Being used #block-views-members-view-block-3
+				border: 1px solid silver;
+				border-radius: 5px;
+				padding: 10px;
+				margin-bottom: 20px;
+
+				h3{
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+.responsive-grid-2{
+	& > ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li{
+			float: left;
+			width: (100% / 2);
+			box-sizing: border-box;
+			padding: 10px;
+			// min-height: 300px;
+		}
+	}
+
+	@media #{$tablet-and-smaller}{
+		& > ul{
+			& > li{
+				float: none;
+				width: (100%);
+			}
+		}
+	}
+}
+
+.responsive-grid-6{
+	& > ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li{
+			float: left;
+			width: (100% / 6);
+			box-sizing: border-box;
+			padding: 10px;
+			min-height: 300px;
+		}
+	}
+
+	@media #{$tablet}{
+		& > ul{
+			& > li{
+				width: (100% / 4);
+			}
+		}
+	}
+
+	@media #{$mobile}{
+		& > ul{
+			& > li{
+				width: (100% / 2);
+			}
+		}
+	}
+}
+
+.flexslider{
+	clear: both; //being used on the user profiles
+	.flex-direction-nav a:before{
+		line-height: 40px;
+		display: block;
+	}
+}
+
+
+.profile, .node {
+  .flexslider{
+	max-width: 400px;
+	background: silver;
+	padding: 45px;
+  }
+  .flex-control-nav{
+	left: 0;
+  }
+}
+
+.view-slideshow{
+	.flexslider{
+		margin: 0;
+	}
+	.flex-caption {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 20px;
+		color: #FFF;
+		background: rgba(0,0,0,.5);
+		font-size: .9em;
+
+		a{
+		  text-decoration: none;
+		  color: $dark-teal;
+		  text-shadow: 1px 1px 5px #000;
+		  &:hover{
+			color: $teal;
+		  }
+		}
+
+		h2, h3{
+			margin: 0;
+			display: inline-block;
+		}
+
+		p{
+			margin: 0;
+		}
+		@media #{$mobile}{
+			position: static;
+			padding: 10px;
+		}
+		.date-display-range{
+			display: inline-block;
+		}
+	}
+}
+
+@media #{$mobile}{
+	.mobile-hidden{
+		display: none;
+	}
+}
+
+.view-news{
+	.views-row{
+		padding: 10px;
+		// border-bottom: 2px solid #ccc;
+		// &.views-row-last{
+		// 	border-bottom: none;
+		// }
+	}
+}
+
+.node-teaser .field-type-image {
+	float: right;
+	margin: 0 5px;
+	@media #{$mobile}{
+		float: none;
+	}
+}

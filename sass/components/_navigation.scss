@@ -1,0 +1,52 @@
+#main-menu{
+  outline: none;
+  float: left;
+  $border-color: $teal;
+
+  a{
+    font-size: 1.2em;
+    line-height: 1em;
+    // padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $dark-gray;
+    display: block;
+    text-shadow: 1px 1px 1px $light-gray;
+    font-family: $arial;
+    
+    &:hover{
+      color: $dark-teal;
+    }
+  }
+
+  ul{
+    margin: 0;
+    padding: 10px;
+    display: block;
+  }
+
+  li{
+    display: inline-block;
+    border-right: 7px double $border-color;
+    // margin: 0 1ex;
+    padding: .25ex 1.6ex;
+    &.last{
+      border: none;
+    }
+  }
+  @media #{$tablet-and-smaller}{
+    float: none;
+    clear: both;
+    text-align: center;
+
+    li, li.last{
+      border-radius: 5px;
+      border: 2px solid $border-color;
+      padding: 5px;
+      margin: 5px;
+      background: #eee;
+      // margin: 0;
+    }
+  }
+}

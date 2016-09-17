@@ -1,0 +1,61 @@
+.view-calendar{
+	.date-nav{
+		padding: 0;
+
+		.date-heading{
+			h3{
+				font-size: 1.2em;
+			}
+		}
+		.pager{
+			list-style: none;
+			margin: 0;
+
+			& > li{
+				padding: 2px 6px;
+				a{
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	.mini{
+		font-size: .85em;
+		font-weight: 700;
+
+		td{
+			text-align: center;
+		}
+	}
+}
+
+// the height of the bar marking events spanning multiple days
+.calendar-calendar .month-view .full td.multi-day div.monthview,
+ .calendar-calendar .week-view .full td.multi-day div.weekview,
+  .calendar-calendar .day-view .full td.multi-day div.dayview {
+    height: 1.4em;
+}
+
+.view-item-calendar{
+	line-height: 1em;
+
+	div.calendar{
+    	font-size: .8em;
+    	line-height: 1.4em;
+	}
+}
+
+.date-nav-wrapper .date-prev {
+	left: 0 !important;
+	right: auto !important;
+}
+
+.calendar.monthview{
+	a{
+		color: #105584;
+		&:hover{
+			color: darken(#105584, 5%);
+		}
+	}
+}

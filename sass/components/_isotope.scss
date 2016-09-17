@@ -1,0 +1,16 @@
+.isotope-container{
+	list-style: none;
+}
+
+// .isotope-gutter-sizer {
+// 	width: 2%;
+// }
+.isotope-grid-sizer, .isotope-element { 
+	width: 49%; 
+	// height: 50px;
+}
+.isotope-element{
+	img{
+		max-width: 100%;
+	}
+}

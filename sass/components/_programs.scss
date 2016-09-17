@@ -1,0 +1,142 @@
+.program-item{
+	@include clearfix;
+
+	.image{
+		float: left;
+		margin-right: 20px;
+		margin-bottom: 20px;
+		width: 45%;
+	}
+	.date{
+		font-style: italic;
+	}
+	.title{
+		margin: 0;
+	}
+	p{
+		margin: 0;
+	}
+
+	@media #{$tablet-and-smaller}{
+		.image{
+			float: none;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+		margin-bottom: 20px;
+	}
+}
+
+
+.featured-items{
+	@include clearfix;
+	li.views-row-odd{
+		text-align: left;
+	}
+	li.views-row-even{
+		text-align: right;
+	}
+	.featured-body{
+		position: relative;
+
+		.overlay{
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+			// padding: 5px;
+			box-sizing: border-box;
+			color: white;
+			// text-align: right;
+			min-height: 45%;
+			max-height: 100%;
+			height: 45%;
+			text-shadow: 1px 1px 5px #000;
+			transition: height .5s, background 1s;
+			overflow: hidden;
+			background: rgba(0,0,0,.25);
+
+			.title{
+				margin: 0;
+				margin-bottom: 1ex;
+				padding: 0 10px;
+				line-height:.95em;
+
+				&.Exhibition{
+					background: rgba($green, .75);
+				}
+				&.Workshop{
+					background: rgba($gold, .75);
+				}
+				&.Performance{
+					background: rgba($blue, .75);
+				}
+				&.Special-Event{
+					background: rgba(silver, .75);
+				}
+			}
+
+			.description{
+				padding: 10px;
+				padding-top: 0;
+			}
+
+			.body{
+				// display: none;
+				height: 0;
+				opacity: 0;
+				font-size: .95em;
+			}
+
+			a{
+				color: white;
+				text-decoration: none;
+			}
+
+			p{
+				margin: 0;
+				line-height: 1.2em;
+			}
+		}
+	}
+
+	& > ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li{
+			// position: relative;
+			// float: left;
+			// width: 50%;
+			// box-sizing: border-box;
+
+			padding: 5px;
+
+			img{
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+			// @media #{$tablet-and-smaller} {
+			// 	float: none;
+			// 	width: 100%;
+			// }
+
+			&:hover{
+
+				.overlay{
+					background: rgba(0,0,0,.5);
+					height: 85%;
+					
+					.body{
+						// display: block;
+						height: auto;
+						opacity: 1;
+						transition: opacity 1s;
+					}
+				}
+			}
+		}
+	}
+}
