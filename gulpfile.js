@@ -7,6 +7,7 @@ var creds = require('./creds');
 var globs = [
   'images/**',
   'css/**',
+  'sass/**',
   'js/**',
   'fonts/**',
   'templates/**',
@@ -39,9 +40,9 @@ gulp.task('compass', function() {
       css: 'css',
       sass: 'sass'
     }))
-    .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(postcss([ autoprefixer({ browsers: ['last 4 versions'] }) ]))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('css'));
 });
 
