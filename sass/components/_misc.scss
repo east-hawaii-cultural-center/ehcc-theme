@@ -1121,3 +1121,16 @@ blockquote{
     position: static;
   }
 }
+
+p.submitted{
+  margin-top: 0;
+}
+
+.img-right{
+  float: right;
+
+  @media #{$tablet-and-smaller}{
+    float: none;
+    display: block;
+  }
+}
