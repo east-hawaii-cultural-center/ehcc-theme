@@ -1073,7 +1073,7 @@ h2{
   z-index: 1;
   text-transform: uppercase;
 
-  &.node-title:after{
+  &.node-title:after, &.pane-title:after{
     content: '';
     display: block;
     height: 5px;
@@ -1133,4 +1133,16 @@ p.submitted{
     float: none;
     display: block;
   }
+}
+
+.btn.btn-round{
+  background-color: #337ab7;
+  color: white;
+  padding: 6px 20px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 45px;
+  text-decoration: none !important;
+  font-weight: bold;
+  display: inline-block;
 }

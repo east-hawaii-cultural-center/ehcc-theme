@@ -27,7 +27,7 @@ function getFtpConnection() {
     log: gutil.log
   });
 }
- 
+gulp.task('compile', ['compass']);
 gulp.task('compass', function() {
   var compass = require('gulp-compass');
   var postcss      = require('gulp-postcss');
@@ -46,14 +46,14 @@ gulp.task('compass', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('deploy', ['compass'], function () {
+gulp.task('deploy', function () {
   var conn = getFtpConnection();
 
   // using base = '.' will transfer everything to /public_html correctly
   // turn off buffering in gulp.src for best performance
 
   return gulp.src(globs, {base: '.', buffer: false})
-    .pipe(conn.newer(creds.remote)) // only upload newer files
+    //.pipe(conn.newer(creds.remote)) // only upload newer files
     .pipe(conn.dest(creds.remote));//'/public_html'
 });
 

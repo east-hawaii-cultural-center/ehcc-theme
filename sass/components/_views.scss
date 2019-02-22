@@ -139,13 +139,14 @@
 		margin: 0;
 	}
 	.flex-caption {
-		position: absolute;
-		bottom: 0;
+		// position: absolute;
+		// top: 0;
 		width: 100%;
 		box-sizing: border-box;
 		padding: 20px;
 		color: #FFF;
-		background: rgba(0,0,0,.5);
+		// background: rgba(0,0,0,.5);
+		background: #1c2527;
 		font-size: .9em;
 
 		a{
