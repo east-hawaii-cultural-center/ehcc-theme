@@ -27,14 +27,13 @@ function getFtpConnection() {
     log: gutil.log
   });
 }
-gulp.task('compile', ['compass']);
-gulp.task('compass', function() {
+gulp.task('compile', function() {
   var compass = require('gulp-compass');
   var postcss      = require('gulp-postcss');
   // var sourcemaps   = require('gulp-sourcemaps');
   var autoprefixer = require('autoprefixer');
 
-  gulp.src('./sass/*.scss')
+  return gulp.src('./sass/*.scss')
     .pipe(compass({
       config_file: './config.rb',
       css: 'css',
@@ -57,8 +56,8 @@ gulp.task('deploy', function () {
     .pipe(conn.dest(creds.remote));//'/public_html'
 });
 
-gulp.task('watch', ['compile'], function() {
-  gulp.watch(['./sass/*.scss', './sass/**/*.scss'], ['compass']);
+gulp.task('watch', gulp.series('compile'), function() {
+  gulp.watch(['./sass/*.scss', './sass/**/*.scss'], gulp.series('compile'));
 
   // gulp.watch(globs, ['deploy']); //If we do this, it would upload every thing any time you save something...
   var conn = getFtpConnection();

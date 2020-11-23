@@ -1072,6 +1072,7 @@ h2{
   position: relative;
   z-index: 1;
   text-transform: uppercase;
+  line-height: 1.5em;
 
   &.node-title:after, &.pane-title:after{
     content: '';
@@ -1080,7 +1081,7 @@ h2{
     background: #ccc;
     background: url($stripes-gray);
     position: relative;
-    top: -14px;
+    top: -.5ex;
     z-index: -1;
   }
 }

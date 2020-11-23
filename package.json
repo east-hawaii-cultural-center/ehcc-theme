@@ -9,9 +9,9 @@
   "author": "Andrew W.",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-compass": "^2.1.0",
-    "gulp-util": "^3.0.7",
+    "gulp-util": "^3.0.8",
     "vinyl-ftp": "^0.6.1"
   },
   "dependencies": {
