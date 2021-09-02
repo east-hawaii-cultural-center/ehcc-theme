@@ -75,59 +75,88 @@
 /**
  * Branding header.
  */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  
+  @media #{$tablet-and-smaller}{
+    flex-direction: column;
+    align-items: center;
 
-/* Wrapping link for logo. */
-.header__logo {
-  // float: left; /* LTR */
-  margin: 0;
-  padding: 0;
-}
-
-/* Logo image. */
-.header__logo-image {
-  vertical-align: bottom;
-}
-
-/* Wrapper for website name and slogan. */
-.header__name-and-slogan {
-  float: left;
-}
-
-/* The name of the website. */
-.header__site-name {
-  margin: 0;
-  @include adjust-font-size-to( $h1-font-size );
-}
-
-/* The link around the name of the website. */
-.header__site-link {
-  &:link,
-  &:visited {
-    color: #000;
-    text-decoration: none;
+    &#header{ //additional specificity
+      padding: 10px;
+    }
   }
 
-  &:hover,
-  &:focus {
-    text-decoration: underline;
+  /* Wrapping link for logo. */
+  &__logo{
+    // float: left; /* LTR */
+    margin: 0;
+    padding: 0;
+    display: block;
+
+    /* Logo image. */
+    &-image{
+      max-height: 100px;
+      display: block;
+    }
+  }
+
+  &__body{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+    
+    @media #{$tablet-and-smaller}{
+      margin-left: 0;
+    }
+  }
+
+  /* Wrapper for website name and slogan. */
+  &__name-and-slogan {
+    float: left;
+  }
+  
+  /* The name of the website. */
+  &__site-name {
+    margin: 0;
+    @include adjust-font-size-to( $h1-font-size );
+  }
+
+  /* The link around the name of the website. */
+  &__site-link {
+    &:link,
+    &:visited {
+      color: #000;
+      text-decoration: none;
+    }
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  /* The slogan (or tagline) of a website. */
+  &__site-slogan {
+    margin: 0;
+  }
+  
+  /* The secondary menu (login, etc.) */
+  &__secondary-menu {
+    float: right; /* LTR */
+  }
+
+  /* Wrapper for any blocks placed in the header region. */
+  &__region {
+    display: flex;
+    justify-content: flex-end;
   }
 }
-
-/* The slogan (or tagline) of a website. */
-.header__site-slogan {
-  margin: 0;
-}
-
-/* The secondary menu (login, etc.) */
-.header__secondary-menu {
-  float: right; /* LTR */
-}
-
-/* Wrapper for any blocks placed in the header region. */
-// .header__region {
-//   /* Clear the logo. */
-//   clear: both;
-// }
 
 /**
  * Navigation bar.
@@ -1005,34 +1034,6 @@ body{
 #block-search-form{
   margin: 0;
   float: right;
-}
-
-#header{
-  @include clearfix;
-  padding: 10px;
-}
-
-
-#header-left{
-  width: 26%;
-}
-#header-right{
-  width: 74%;
-}
-
-#header-left, #header-right{
-  float: left;
-
-  @media #{$tablet-and-smaller}{
-    float: none;
-    width: 100%;
-  }
-}
-
-.region-header{
-  @include clearfix;
-  padding: 10px;
-  min-width: 200px;
 }
 
 a{

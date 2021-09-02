@@ -1,7 +1,7 @@
 #main-menu{
   outline: none;
-  float: left;
   $border-color: $teal;
+  margin-top: 10px;
 
   a{
     font-size: 1.2em;
@@ -22,12 +22,16 @@
 
   ul{
     margin: 0;
-    padding: 10px;
-    display: block;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media #{$tablet-and-smaller}{
+      justify-content: center;
+    }
   }
 
   li{
-    display: inline-block;
+    display: block;
     border-right: 7px double $border-color;
     // margin: 0 1ex;
     padding: .25ex 1.6ex;
@@ -36,10 +40,6 @@
     }
   }
   @media #{$tablet-and-smaller}{
-    float: none;
-    clear: both;
-    text-align: center;
-
     li, li.last{
       border-radius: 5px;
       border: 2px solid $border-color;
