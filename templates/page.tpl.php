@@ -118,7 +118,7 @@
 </div>
 
 <footer id="footer">
-  <div class="center"><?php print render($page['footer']); ?></div>
-  <div class="left"><?php print render($page['footer_left']); ?></div>
-  <div class="right"><?php print render($page['footer_right']); ?></div>
+  <div class="footer-center"><?php print render($page['footer']); ?></div>
+  <div class="footer-left"><?php print render($page['footer_left']); ?></div>
+  <div class="footer-right"><?php print render($page['footer_right']); ?></div>
 </footer>

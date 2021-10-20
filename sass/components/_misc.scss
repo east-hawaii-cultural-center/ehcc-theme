@@ -918,35 +918,30 @@ img{
 }
 
 #footer{
-  @include clearfix;
   // background: $dark-gray;
   background: #404040; // url('/sites/all/themes/ehcc/images/bkg-lauhala-dark.jpg');
   color: white;
   padding: 20px;
   text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
-  & > .left, & > .center, & > .right{
-    position: relative;
-    float: left;
-    width: 1/3 * 100%;
-    min-height: 1px; //force the layout
+  &:before, &:after{
+    display: none; //Remove the janky clearfix stuff
+  }
+
+  @media #{$tablet-and-smaller}{
     display: block;
-
-    @media #{$tablet-and-smaller}{
-      float: none;
-      width: 100%;
-      position: static;
-    }
   }
 
-  & > .left{
-    right: 1/3 * 100%;
+  .footer-left{
+    grid-column: 1;
   }
-  & > .center{
-    left: 1/3 * 100%;
+  .footer-center{
+    grid-column: 2;
   }
-  & > .right{
-    
+  .footer-right{
+    grid-column: 3;
   }
 
   .block {
