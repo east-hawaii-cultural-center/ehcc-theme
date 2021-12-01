@@ -886,6 +886,8 @@ img{
 }
 
 .sidebars{
+  margin-top: 20px;
+
   input{
     width: 100%;
     box-sizing: border-box;
@@ -1069,6 +1071,10 @@ h2{
   z-index: 1;
   text-transform: uppercase;
   line-height: 1.5em;
+
+  &.pane-title{
+    margin-top: 0;
+  }
 
   &.node-title:after, &.pane-title:after{
     content: '';
